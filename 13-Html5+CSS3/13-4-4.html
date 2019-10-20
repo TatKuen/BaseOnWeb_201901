@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>input 新增部分标记使用</title>
+    </head>
+    <body>
+        <form oninput="sum.value=parseInt(num1.value)+parseInt(num2.value)">
+            0<input type="range" id="num1" value="50" min="0" max="100">100
+            +<input type="number" id="num2" value="50">
+            =<output name="sum" for="num1 num2"></output>
+        </form>
+        <p><strong>注意：</strong>IE不支持output标记。</p>
+    </body>
+</html>

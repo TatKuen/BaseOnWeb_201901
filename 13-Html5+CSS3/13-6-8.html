@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS3 动画</title>
+        <style>
+            /*  
+                @keyframes:
+                    关键帧
+                    @keyframes myAnimation {
+                        from {
+                            Properties: Properties value;
+                        }
+                        Percentage {
+                            Properties: Properties value;
+                        }
+                        to {
+                            Properties: Properties value;
+                        }
+                    }
+                    //
+                    @keyframes myAnimation {
+                        0% {
+                            Properties: Properties value;
+                        }
+                        Percentage {
+                            Properties: Properties value;
+                        }
+                        100% {
+                            Properties: Properties value;
+                        }
+                    }
+
+                animation:
+                    animation-name
+                        动画名称
+                    animation-duration
+                        一个周期所需时间
+                    animation-timing-function
+                        动画速度曲线，默认ease
+                    animation-delay
+                        何时开始
+                    animation-iteration-count
+                        动画被播放的次数n
+                    animation-direction
+                        下一个周期是否逆向播放
+                            normal
+                            alternate
+                    animation-fill-mode
+                        动画时间之外的状态
+                            none
+                            forwards
+                            backwards
+                            both
+                    
+            */
+            div {
+                border: 1px solid black;
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: relative;
+                animation: mymove 5s;
+                color: white;
+                -moz-animation: mymove 5s infinite;
+                -webkit-animation: mymove 5s infinite;
+                -o-animation: mymove 5s infinite;
+            }
+            @keyframes mymove {
+                from, 0% {
+                    left: 0px;
+                    background: red;
+                    top: 0px;
+                }
+                50% {
+                    left: 100px;
+                    background:green;
+                    top: 100px;
+                }
+                to, 100% {
+                    left: 200px;
+                    background: blue;
+                    top: 200px;
+                }
+            }
+            @-webkit-keyframes mymove {
+                from, 0% {
+                    left: 0px;
+                    background: red;
+                    top: 0px;
+                }
+                50% {
+                    left: 100px;
+                    background:green;
+                    top: 100px;
+                }
+                to, 100% {
+                    left: 200px;
+                    background: blue;
+                    top: 200px;
+                }
+            }
+            @-moz-keyframes mymove {
+                from, 0% {
+                    left: 0px;
+                    background: red;
+                    top: 0px;
+                }
+                50% {
+                    left: 100px;
+                    background:green;
+                    top: 100px;
+                }
+                to, 100% {
+                    left: 200px;
+                    background: blue;
+                    top: 200px;
+                }
+            }
+            @-o-keyframes mymove {
+                from, 0% {
+                    left: 0px;
+                    background: red;
+                    top: 0px;
+                }
+                50% {
+                    left: 100px;
+                    background:green;
+                    top: 100px;
+                }
+                to, 100% {
+                    left: 200px;
+                    background: blue;
+                    top: 200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h3>CSS3 animation - 沿矩形对角线运动</h3>
+        <div>Go!Go!Go!</div>
+
+    </body>
+</html>

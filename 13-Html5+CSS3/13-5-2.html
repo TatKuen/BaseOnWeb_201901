@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>音频标记应用</title>
+        <style>
+            fieldset {
+                text-align: center;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>src属性提供音频文件</legend>
+            <audio src="../audio/陈奕迅 - 倾城.mp3" controls="controls">
+                您的浏览器不支持audio标记（元素）
+            </audio>
+        </fieldset>
+        <fieldset>
+            <legend>source标记提供不同的音频文件</legend>
+            <audio controls="controls" loop >
+                <source src="../audio/AY楊佬叁,双飞人 - MayFly ft.AY楊佬叁.mp3" type="audio/mpeg" />
+                您的浏览器不支持audio标记(元素)
+            </audio>
+        </fieldset>
+    </body>
+</html>

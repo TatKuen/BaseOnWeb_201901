@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS3 过渡</title>
+        <style>
+            /*
+                transition: property duration timing-function delay;
+            */
+            div {
+                width: 100px;
+                height: 50px;
+                background-color: #009999;
+                color: white;
+                font-weight: bold;
+                /* 3个属性过渡 */
+                transition: width 2s, height 2s transform 2s;
+            }
+            div:hover {
+                width: 200px;
+                height: 100px;
+                transform: rotate(60deg);
+            }
+            #div1 {
+                /* 匀速 */
+                transition-timing-function: linear;
+                /* transition-delay: 2s; */
+                transition-duration: 1s;
+
+            }
+            #div2 {
+                /* 逐渐变慢 */
+                transition-timing-function: ease;
+            }
+            #div3 {
+                /* 加速 */
+                transition-timing-function: ease-in;
+            }
+            #div4 {
+                /* 减速 ease-out */
+                transition-timing-function: ease-out;
+            }
+            #div5 {
+                /* 加速后减速 */
+                transition-timing-function: ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>CSS3 过渡 transition 与 transform 综合应用</h3>
+        <div id="div1" style="top: 100px;">linear</div>
+        <div id="div2" style="top: 150px;">ease</div>
+        <div id="div3" style="top: 200px;">ease-in</div>
+        <div id="div4" style="top: 250px;">ease-out</div>
+        <div id="div5" style="top: 300px;">ease-in-out</div>
+        <p>请把鼠标指针移动到红色的div元素上，就可以看到<mark>过渡和转换</mark></p>
+        <!-- <script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script> -->
+    </body>
+</html>

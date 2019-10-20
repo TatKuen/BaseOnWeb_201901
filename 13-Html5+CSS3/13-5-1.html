@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>视频标记应用</title>
+        <style>
+            fieldset {
+                text-align: center;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+            width/height:
+                视频宽高
+            src:
+                播放视频的url
+            controls:
+                显示播放控件
+                    播放
+                    暂停
+                    定位
+                    音量
+                    全屏切换
+                    字幕（if）
+                    音轨（if）
+            autoplay:
+                视频就绪后马上播放
+                autoplay="autoplay"
+            preload:
+                在页面加载时加载，预备播放
+                    使用autoplay则忽略属性
+                auto: 页面开始加载，则开始加载音频/视频
+                metadata: 仅加载音频/视频元数据
+                none: 不应加载音频/视频
+            poster:
+                视频下载时显示的图像
+                未使用poster="url",使用视频第一帧替代
+            
+            <source>: 
+                支持多个，
+        -->
+        <fieldset>
+            <legend>src属性提供视频文件</legend>
+            <video src="../video/335302.mp4" poster="url" 
+                loop autoplay width="320px" height="240px" controls="controls">
+                您的浏览器不支持video标记
+            </video>
+        </fieldset>
+        <fieldset>
+            <legend>source标记提供不同的视频文件</legend>
+            <video width="320px" height="240px" controls="controls" >
+                <source src="../video/338606.mp4" type="video/mp4" />
+                <source src="../video/335302.mp4" type="video/mp4" />
+                您的浏览器不支持video标记
+            </video>
+            
+        </fieldset>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" >
+        <title>提示框的应用</title>
+        <script>
+            function display_prompt() {
+                var name = prompt("请输入您的姓名", "TauTatKuen");
+                if (name != null && name != "") {
+                    // 既不为空，也不为null
+                    document.write("您好，" + name + "!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="button" onclick="display_prompt()" value="显示提示框">
+        </form>
+    </body>
+</html>
