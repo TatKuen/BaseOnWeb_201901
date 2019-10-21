@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>SZU Animation</title>
+        <style>
+            html {
+                background-color: #ffffff ;
+            }
+            body {
+                height: 100%;
+                top: 0;
+                bottom: 0;
+            }
+            wrapper {
+                position: relative;
+                margin: 0 auto;
+                display: block;
+                margin-top: 200px;
+                perspective: 1000px;
+                perspective-origin: 60% 50%;
+                transform: rotate(-10deg);
+            }
+            .wrapper > div {
+                position: relative;
+                margin: 0 auto;
+                transform-style: preserve-3d;
+                height: 0;
+            }
+            .szu-logo {
+                width: 250px;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                height: 125px !important;
+            }
+            .szu-logo .star {
+                width: 250px;
+                height: 250px;
+                background: url("../课堂实验/szu-logo-1.jpg") no-repeat;
+                background-size: cover;
+                border-radius: 250px;
+                margin: 0 auto;
+                animation: spinsun 40s infinite linear;
+            }
+            .planet {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                /* 循环播放次数 无限 */
+                animation-iteration-count: infinite;
+                overflow: hidden;
+            }
+            .shadow {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: transparent url("") 0% 0% no-repeat;
+                background-size: cover;
+                border-radius: 100%;
+            }
+
+
+            .Shen {
+                position: absolute;
+                width: 400px;
+                z-index: 2;
+                animation: orbitShen 15s infinite linear;
+                top: -7.5px;
+            }
+            .Shen .planet {
+                width: 15px;
+                height: 15px;
+                font-size: 16px;
+                background-image: url("");
+                animation: anti-spin 15s infinite linear;
+            }
+            .Shen .shadow {
+                animation: shadow 15s infinite linear;
+            }
+
+            .Zhen {
+                position: absolute;
+                width: 506px;
+                z-index: 3;
+                animation: orbitZhen 15s infinite linear;
+                animation-delay: 1s ;
+                top: -19px;
+            }
+            .Zhen .planet {
+                width: 38px;
+                height: 38px;
+                background-image: url("");
+                font-size: 24px;
+                font-weight: bold;
+                animation: anti-spin 15s infinite linear;
+            }
+            .Zhen .shadow {
+                animation: shadow 15s infinite linear;
+            }
+
+            .Da {
+                position: absolute;
+                width: 610px;
+                z-index: 4;
+                animation: orbitDa 15s infinite linear;
+                animation-delay: 2s ;
+                top: -20px;
+            }
+            .Da .planet {
+                width: 40px;
+                height: 40px;
+                background-image: url("");
+                font-size: 36px;
+                font-weight: bold;
+                animation:  anti-spin 15s infinite linear;
+            }
+            .Da .shadow {
+                animation: shadow 20s infinite linear;
+            }
+
+            .Xue {
+                position: absolute;
+                width: 610px;
+                z-index: 4;
+                animation: orbitXue 15s infinite linear;
+                animation-delay: 3s ;
+                top: -20px;
+            }
+            .Xue .planet {
+                width: 40px;
+                height: 40px;
+                background-image: url("");
+                font-size: 72px;
+                font-weight: bolder;
+                animation:  anti-spin 30s infinite linear;
+            }
+            .Xue .shadow {
+                animation: shadow 30s infinite linear;
+            }
+
+            @keyframes spinsun {
+                0% {
+                    transform: rotate(0);
+                }
+                100% {
+                    transform: rotate(-360deg);
+                }
+            }
+
+            @keyframes shadow {
+                0% {
+                    background-position: 130% 0%;
+                }
+                33% {
+                    background-position: 50% 0%;
+                }
+                55% {
+                    background-position: 0% 0%;
+                }
+                80% {
+                    background-position: -50% 0%;
+                }
+                100% {
+                    background-position: -50% 0%;
+                }
+            }
+
+            @keyframes orbitShen {
+                0% {
+                    z-index: 2;
+                    transform: rotateY(0);
+                    color: black;
+                }
+                49% {
+                    z-index: 2;
+                    color: red
+                }
+                50% {
+                    z-index: -2;
+                    color: red;
+                }
+                99% {
+                    z-index: -2;
+                    color: red;
+                }
+                100% {
+                    z-index: 2;
+                    color: black;
+                    transform: rotateY(360deg);
+                }
+            }
+
+            @keyframes orbitZhen {
+                0% {
+                    z-index: 3;
+                    color: black;
+                    transform: rotateY(0);
+                }
+                49% {
+                    color: red;
+                    z-index: 3;
+
+                }
+                50% {
+                    color: red;
+                    z-index: -3;
+                }
+                99% {
+                    color: darkred;
+                    z-index: -3;
+
+                }
+                100% {
+                    z-index: 3;
+                    transform: rotateY(360deg);
+                }
+            }
+
+            @keyframes orbitDa {
+                0% {
+                    z-index: 4;
+                    color: black;
+                    transform: rotateY(0);
+                }
+                49% {
+                    color: red;
+                    z-index: 4;
+                }
+                50% {
+                    color: red;
+                    z-index: -4;
+                }
+                99% {
+                    color: darkred;
+                    z-index: -4;
+                }
+                100% {
+                    z-index: 4;
+                    color: black;
+                    transform: rotateY(360deg);
+                }
+            }
+
+            @keyframes orbitXue {
+                0% {
+                    z-index: 5;
+                    color: black;
+                    transform: rotateY(0);
+
+                }
+                49% {
+                    z-index: 5;
+                    color: red;
+                }
+                50% {
+                    z-index: -5;
+                    color: red;
+                }
+                99% {
+                    z-index: -5;
+                    color: darkred;
+                }
+                100% {
+                    z-index: 5;
+                    color: black;
+                    transform: rotateY(360deg);
+                }
+            }
+
+            /* @keyframes anti-spin {
+                from {
+                    transform: rotateY(0);
+                }
+                to {
+                    transform: rotateY(-360deg);
+                }
+            }
+
+            @keyframes anti-spin-rings {
+                from {
+                    transform: rotateY(0) rotateX(73deg);
+                }
+                to {
+                    transform: rotateY(-360deg) rotateX(73deg);
+                }
+            } */
+
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="szu-logo">
+                <div class="star"></div>
+            </div>
+
+            <div class="Shen">
+                <div class="planet">
+                    <div class="shadow">
+                        深
+                    </div>
+                </div>
+            </div>
+
+            <div class="Zhen">
+                <div class="planet">
+                    <div class="shadow">
+                        圳
+                    </div>
+                </div>
+            </div>
+
+            <div class="Da">
+                <div class="planet">
+                    <div class="shadow">
+                        大
+                    </div>
+                </div>
+            </div>
+
+            <div class="Xue">
+                    <div class="planet">
+                        <div class="shadow">
+                            学
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
