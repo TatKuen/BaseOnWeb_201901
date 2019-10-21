@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>for-in循环</title>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            var i = 1;
+            document.write("<h3>screen对象所有属性名称/属性值:</h3>");
+            // 遍历对象所有属性
+            for (var property in screen) {
+                document.write(i + "." + property + "/" + screen[property] + " ");
+                if (i % 2 == 0) {
+                    // 每行输出两对
+                    document.write("<br />");     
+                }
+                i++;
+            }
+
+            //遍历数组对象的所有元素
+            var stu = new Array("王春平", "张宏伟", "金一心", "任小月", "储忠庆");
+            var j = 1;
+            for (var student in stu) {
+                document.write(j + "." + stu[student] + " ");
+                if (j % 2 == 0) {
+                    document.write("<br />");
+                }
+                j++;
+            }
+        </script>
+    </body>
+</html>
