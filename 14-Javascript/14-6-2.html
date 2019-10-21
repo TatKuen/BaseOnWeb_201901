@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>escape()应用</title>
+    </head>
+    <body>
+        <script>
+            /*
+                escape(string):
+                    对字符串(ISO-Latin-1字符集)进行编码
+                unescape(string):
+                    反转义
+            */
+           document.write("\"?\"进行编码后为:" + escape("?") + "<br />");
+           document.write("\"Javascript编程!\"编码后为:" + escape("Javascript编程"));
+           document.write("<br />Mr Chu 你好！" + "编码后为:" + escape("Mr Chu 你好！"));
+        </script>
+    </body>
+</html>

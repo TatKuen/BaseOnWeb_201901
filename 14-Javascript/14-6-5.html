@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>parseInt()应用</title>
+    </head>
+    <body>
+        <h4>parseInt()应用</h4>
+        <script>
+            /*
+                返回对应的十进制整数值，参数radix用于指定数字的技术
+                    第一个字符不能被转换为数字，返回NaN
+
+                1. 0开头，8为基数
+                2. 0x开头， 16为基数
+                3. <2 || >36, parseInt() 返回Nan
+            */
+            document.write("\"10\"转换为整数的结果为:" + parseInt("10") + "<br>");
+            document.write("十进制\"63\"转换为整数结果为：" + parseInt("63", 10) + "<br>");
+            document.write("二进制\"11\"转换为整数的结果为：" + parseInt("11", 2) + "<br>");
+            document.write("八进制\"15\"转换为整数的结果为：" + parseInt("15", 8) + "<br>");
+            document.write("十六进制\"1f\"转换为整数的结果为：" + parseInt("1f", 16) + "<br>");
+            document.write("\"010\"转换为整数结果为：" + parseInt("010", 8) + "<br>");
+            document.write("\"书定价为30元\"转换为整数的结果为：" + parseInt("书定价为30元") + "<br>");
+        </script>
+    </body>
+</html>
