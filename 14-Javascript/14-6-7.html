@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>验证邮箱合法性</title>
+
+        <script type="text/javascript">
+                function emailCheck() {
+                    //获取用户输入的邮箱地址相关信息，仅验证最多有两个"."号
+                    var emailString = document.form1.email.value;
+                    var emailLength = emailString.emailLength;
+                    var index1 = emailString.indexOf("@");
+                    var index2 = emailString.indexOf(".");          // 取第一个点
+                    var index3 = email.String.lastIndexOf(".");     // 取最后一个点
+                    var msg = "验证邮箱地址实例:\n\n";
+                    msg += "邮箱地址：" + emailString + "\n";
+                    msg += "验证信息：";
+                    var emailFlag = false;
+    
+                    /*
+                        返回相关验证信息
+                        首先判断邮箱中心必须有 @ 和 . , 且 @ 在前面， . 在后面
+                        @ 不能为首字符， . 不能为最后一个字符 
+                    */
+                    if (index1 != -1 && index3 != -1 && index3 > index1+2 && index1 != 0 && index3 != emailLength - 1) {
+                        // 判断几个点号
+                        if (index2 == index3) {
+                            // 只有一个
+                            emailFlag = (index2 > index1+3) ? true : false;
+                        }
+                        else {
+                            // 两个以上
+                            emailFlag = (index3 >= index2+3 && index2 >= index1+3) ? true : false;
+                        }
+                    }
+                    else {
+                        emailFlag = false;
+                    }
+    
+                    if (!emailFlag) {
+                        msg += "邮箱地址不合法!\n\n";
+                        msg += "不能同实满足如下条件：\n";
+                        msg += "1. 邮箱中必须同时含有‘@’和'.'字符; \n'";
+                        msg += "2. '@'后必须有'.',且中间至少间隔一个字符; \n";
+                        msg += "3. '@'不能为第一个字符, '.'不能为最后一个字符 \n";
+    
+                    }
+                    else {
+                        msg += "邮箱地址合法!\n\n";
+                        msg += "能同实满足如下条件：\n";
+                        msg += "1. 邮箱中必须同时含有‘@’和'.'字符; \n'";
+                        msg += "2. '@'后必须有'.',且中间至少间隔一个字符; \n";
+                        msg += "3. '@'不能为第一个字符, '.'不能为最后一个字符 \n";
+                    }
+                    alert(msg);
+                }
+            </script>
+    </head>
+    <body>
+        <!--
+            toString(radix):
+                radix: 2-36
+                var a = 12;
+                alert(a.toString(2));   // 输出二进制12 1100
+            toFixed(n):
+                浮点数转换为固定小数点位数的数字
+                var a = 2016.1567;
+                alert(a.toFixed(2));
+                alert(a.toFixed(5));
+        -->
+
+        <form name="form1">
+            邮箱地址：<input type="text" name="email" value="@">
+            <input type="button" value="验证邮箱地址" onclick="emailCheck()" >
+        </form>
+
+
+    </body>
+</html>
