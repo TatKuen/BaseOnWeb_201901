@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript动态指定</title>
+    </head>
+    <style>
+        /*
+            2. 动态指定
+            Object.onclick = function() {
+                disp();
+            }
+        */
+        #inp {
+            width: 100px;
+            height: 40px;
+            color: red;
+        }
+    </style>
+    <script>
+        function clickHandler() {
+            alert("代码触发事件，即将提交表单!");
+            return true;
+        }
+    </script>
+    <body>
+        <form name="myform" method="post" action="">
+            <input id="inp" type="button" name="mybutton" value="提交" >
+        </form>
+        <script>
+            // 向button元素动态分配onclick事件
+            document.getElementById('inp').onclick = function() {
+                return clickHandler();
+            }
+            myform.mybutton.onclick();
+        </script>
+    </body>
+</html>

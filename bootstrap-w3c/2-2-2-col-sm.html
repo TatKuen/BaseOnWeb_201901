@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap-grid.css" rel="stylesheet">        
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/core.js"></script>
+    </head>
+    <body>
+        <!--
+            Bootstrap 4 : five classes
+                .col-               extra small < 576px
+                .col-sm-            small > 576
+                .col-md-            medium devices > 768
+                .col-lg-            large device > 992      
+                .col-xl-            xlarge device > 1200
+        -->
+        <div class="container-fluid">
+            <h1>Responsive Columns</h1>
+            <p>Resize the browser window to see the effect.</p>
+            <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+
+            <div class="row">
+                <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+                <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
+                <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+                <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>特定对象特定事件的指定</title>
+    </head>
+    <body>
+        <!--
+            <script type="text/javascript" for="对象" event="事件句柄" >
+                // Code here...
+            </script>
+        
+            for : 指定特定对象，如window、document等
+            event: 事件句柄名称 onload、onunload
+        -->
+        <h4>给特定对象指定特定事件处理程序</h4>
+        <script type="text/javascript" for="window" event="onload">
+            alert("网页读取完成，欢迎光临!");
+        </script>
+    </body>
+</html>

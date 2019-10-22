@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>获得/失去焦点测试</title>
+        <script type="text/javascript">
+        /*
+            onfocus = 表单控件获得焦点触发focus事件
+
+            onblur = 单击其他区域，按钮失去焦点
+        */
+            function getFocus() {
+                document.bgColor = "#114455";
+            }
+            function lostFocus() {
+                document.bgColor = "#ff66ff";
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <br />
+            <input type="button" onfocus="getFocus()" value="获得/失去焦点触发事件" onblur="lostFocus()" />
+        </form>
+    </body>
+</html>
