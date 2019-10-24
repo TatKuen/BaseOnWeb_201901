@@ -8,84 +8,33 @@
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdn.bootcss.com/jquery/3.4.1/core.js"></script>
+        <style>
+            body {
+                background-color: black;
+            }
+        </style>
     </head>
     <body>
     <!--
-        .table-striped:
-            add zebra-striped
+        Rounded Corners:
 
-        .table-bordered:
-            add borders
-        
-        .table-hover:
-            a hover effect
-        
-        .table-dark:
-            a black background to the table
-        
-        .thead-dark:
-        .thead-light:
+            .rounded:
+            .rounded-circle:
+            .Thumbnail:
 
-        .table-sm:
-            cutting cell padding in half
-        .table-responsive
-            scroll horizontally on screen < 992px
-        
+            .float-left:
+            .float-right
+
 
         
     -->
 
         <div class="container">
-            <h2>Striped Rows</h2>
-            <p>The .table-striped class adds zebra-stripes to a table:</p>
-
-            <div class="table-responsive">
-            <table class="table">
-                <thead class="thead-light">
-                    <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="table-primary">
-                        <th>John</th>
-                        <th>Doe</th>
-                        <th>john@example.com</th>
-                    </tr>
-                    <tr class="table-success">
-                        <th>Mary</th>
-                        <th>Moe</th>
-                        <th>mary@example</th>
-                    </tr>
-                    <tr class="table-danger">
-                        <th>July</th>
-                        <th>Dooley</th>
-                        <th>july@example.com</th>
-                    </tr>
-                </tbody>
-                <thead class="thead-dark table-sm">
-                        <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
-                        </tr>
-                </thead>
-                <tbody>
-                    <tr class="table-warning">
-                            <th>July</th>
-                            <th>Dooley</th>
-                            <th>july@example.com</th>
-                    </tr>
-                    <tr class="table-info">
-                                <th>July</th>
-                                <th>Dooley</th>
-                                <th>july@example.com</th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <h2>Rounded Conrners</h2>
+            <p>The .rounded class adds rounded corners to an image:</p>
+            <img src="../img/tree.jpg" class="rounded" alt="Orginal Tree" width="300px" height="240px" />
+            <img src="../img/tree.jpg" class="rounded-circle" alt="Orginal Tree" width="300px" height="240px" />
+            <img src="../img/tree.jpg" class="img-thumbnail float-left" alt="Orginal Tree" width="300px" height="240px" />
         </div>
     </body>
 </html>

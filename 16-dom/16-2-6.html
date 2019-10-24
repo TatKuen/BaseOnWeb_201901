@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>获得、设置节点属性</title>
+        <style>
+            td {
+                text-align: center;
+            }
+        </style>
+        <script>
+            var bg_begin;
+            function getBgColor() {
+                bg_begin = $("myTable").getAttribute("bgColor");
+            }
+            function $(id) {
+                return document.getElementById(id);
+            }
+            function randomInteger() {
+                var int = Math.floor(Math.random() * 256);
+                return int;
+            }
+            function changeColor() {
+                $("myTable").setAttribute("bgColor", createHexColor());
+            }
+            function createHexColor() {
+                var rc = randomInteger().toString(16);  // Hex
+                var gc = randomInteger().toString(16);  // Hex
+                var bc = randomInteger().toString(16);
+                var color1 = "#" + rc + gc + bc;
+                return color1;   
+            }
+            function restoreColor() {
+                $("myTable").setAttribute("bgColor", bg_begin);
+            }
+
+        </script>
+    </head>
+    <body onload="getBgColor()">
+
+        <!--
+            getAttribute():
+                用于获取
+            setAttribute():
+                设置元素指定属性的值
+        -->
+        <form method="post" action="">
+            <table id="myTable" align="center" border="1" bgcolor="#99cccc" width="500px">
+                <tr>
+                    <caption>专业学生花名册</caption>
+                    <td>序号</td>
+                    <td>姓名</td>
+                    <td>学号</td>
+                    <td>专业</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>DDQ</td>
+                    <td>2012150168</td>
+                    <td>CSSE</td>
+                </tr>
+                <tr>
+                        <td>1</td>
+                        <td>DDQ</td>
+                        <td>2012150168</td>
+                        <td>CSSE</td>
+                </tr>
+                <tr>
+                        <td>1</td>
+                        <td>DDQ</td>
+                        <td>2012150168</td>
+                        <td>CSSE</td>
+                </tr>
+                <td colspan="4">
+                    <input type="button" value="设置新颜色" onclick="changeColor()">
+                    <input type="button" value="恢复颜色" onclick="restoreColor()">
+                </td>
+                    
+            </table>
+        </form>
+    </body>
+</html>

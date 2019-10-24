@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>innerText、innerHTML举例</title>
+        <script>
+            /*
+                innerText:
+                    修改起始标记和结束标记之间的文本
+                    自动对小于号、大于号、引号和 & 进行HTML编码
+
+                    e.g:
+                        // previous 
+                        oDiv.appendChild(document.createTextNode("中国你好！！"));
+
+                        // now
+                        oDiv.innerText = "中国你好！！";
+
+                innerHTML:
+                    为空<div>创建<strong>子节点
+
+                    // previous
+                    var strong1 = document.createElement("strong");
+                    var otext = document.createTextNode("hello world!");
+                    strong1.appendChild(otext);
+                    oDiv.appendChild(strong1);
+
+                    // now
+                    oDiv.innerHTMl = "<strong>hello world!</strong>rff";
+
+
+            */
+            function textGet() {
+                var oDiv = document.getElementById("oDiv");
+                var msg = "通过innerText属性获得: ";
+                msg += oDiv.innerHTML;
+                msg += "\n通过innerHTML属性获得: ";
+                msg += oDiv.innerHTML;
+                alert(msg);
+            }
+        </script>
+    </head>
+    <body onload="textGet()">
+        <div id="oDiv">
+            <strong>web前端开发技术，不错</strong>
+        </div>
+    </body>
+</html>
