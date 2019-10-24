@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>节点删除、插入、替换</title>
+        <script>
+
+            /*
+                removeChild()
+                    删除
+                insertBefore()
+                    插入
+                replaceChild()
+                    替换
+            */
+            function $tag(tagname) {
+                return document.getElementsByTagName(tagname);
+            }
+            function operateNode() {
+                // 删除<p>元素
+                var p = $tag("p")[0];
+                document.form1.removeChild(p);
+                var h5 = document.createElement("h5");
+                var ptext = document.createTextNode("web前端开发技术! -h5");
+                h5.appendChild(ptext);
+                var h2 = $tag("h2")[0];
+                document.form1.replaceChild(h5, h2);
+
+                // b元素前插入一个<p>元素
+                var newp = document.createElement("p");
+                var ptext1 = document.createTextNode("中国的是世界的！ -new p");
+                newp.appendChild(ptext1);
+                document.form1.insertBefore(newp, $tag("b")[0]);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form1">
+            <h2>Javascript程序设计 - h2</h2>
+            <p>Hello world!</p>
+            <b>世界的也是中国的！-b</b><br>
+            <input type="button" value="单击修改节点" onclick="operateNode()" >
+        </form>
+    </body>
+</html>

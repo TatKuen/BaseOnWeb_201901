@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>DOM节点访问</title>
+        <style type="text/css">
+            feildset {
+                width:350px;
+                height: 150px;
+                text-align: center;
+            }
+        </style>
+        <script>                
+            // 通过id获取HTML页面的任一元素
+            function $(id) {
+                return document.getElementById(id);
+            }
+            // 通过 $(id)获取特定元素，并获取该元素的value值
+            // function validate() {
+            //     // 用户登录的校验代码
+            //     var msg = "用户名为：";
+            //     var username = $("username").value;
+            //     var pwd = $("password").value;
+            //     var email = $("email").value;
+            //     msg = msg + username + "\n密码为：" + pwd + "\n邮箱地址为：" + email;
+            //     alert(msg);
+            // }
+
+
+            // function $name(name) {
+            //     return document.getElementsByName(name);
+            // }
+            // function validate() {
+            //     var msg = "用户名为：";
+            //     var username = $name("username")[0].value;
+            //     var pwd = $name("password")[0].value;
+            //     var email = $name("email")[0].value;
+            //     msg = msg + username + "\n密码为: " + pwd + "\n邮箱地址为: " + email;
+            //     alert(msg);
+            // }
+
+            function $tag(tagname) {
+                return document.getElementsByTagName(tagname);
+            }
+            function validate() {
+                var msg = "用户名为：";
+                var username = $tag("input")[0].value;
+                var pwd = $tag("input")[1].value;
+                var email = $tag("input")[2].value;
+                msg = msg + username + "\n密码为:" + pwd + "\n邮箱地址为: " + email;
+                alert(msg);
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <!--
+            getElementById():
+                目标元素的id
+
+            getElementByName():
+                选择页面元素属性 name的属性值，字符串型
+                返回一个数组，即使对应的该名字的元素只有一个
+
+                指定名字，页面没有相对应的元素，返回长度为0的数组
+                    通过 （length == 0） ？ find out : no;
+
+            getElementsByTagName():
+                标记名称获得页面所有同类的元素
+                    返回数组
+                function $tag(tagname) {
+                    return document.getElementsByTagName(tagname);
+                }
+                
+        -->
+        <form method="post" action="" name="myform">
+            <fieldset>
+                <legend align="center">用户信息</legend>
+                用户名：<input type="text" name="username" id="username"><br>
+                密码：<input type="password" name="password" id="password"><br>
+                邮箱：<input type="text" name="email" id="email"><br>
+                <input type="button" value="提交" onclick="validate();" >
+                <input type="reset" />
+
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>创建节点的应用</title>
+        <script>
+                /*
+                    
+                */
+                function createP() {
+                    var newp = document.createElement("p");
+                    var ptext = document.createTextNode("Hello world!");
+                    newp.appendChild(ptext);
+                    document.forms[0].appendChild(newp);
+                }
+            </script>
+    </head>
+    <body>
+        <form name="form1">
+            <input type="button" value="点击创建节点" onclick="createP()" >
+        </form>
+    </body>
+</html>

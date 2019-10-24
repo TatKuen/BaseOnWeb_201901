@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>日期转换成字符串的应用</title>
+    </head>
+    <body>
+        <!--
+            toString(): 转换成字符串
+            toLocaleString(): 本地时间格式，
+            toLocaleTimeString(): 对象的 时间 部分转换成字符串
+            toLocaleDateString(): 日期部分 转换成字符串
+        -->
+        <h4>日期转换成字符串的应用</h4>
+        <script>
+            var MyDate = new Date();
+            var msg = "";
+            msg += "当前日期字符串toString():" + MyDate.toString() + "<br>";
+            msg += "本地日期字符串toLocaleString():" + MyDate.toLocaleString() + "<br>";
+            document.write(msg);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>随机产生10个整数</title>
+        <script>
+            function $(id) {
+                return document.getElementById(id);
+            }
+            function createInt() {
+                var m = parseFloat($("minN").value);
+                var n = parseFloat($("maxN").value);
+                var array_int = new Array();
+                if (m >= n) {
+                    alert("数组下限值不能大于或等于上限制!请重新输入");
+                    $("minN").focus();
+                }
+                else {
+                    for (var i = 0; i < 10; i++) {
+                        array_int[i] = Math.round((Math.random() * (n - m)) + m);
+                    }
+                }
+                $("array_num").value = array_int.join(",");
+            }
+
+        </script>
+    </head>
+    <body>
+        <!--
+            Math:
+                Math.E: 算术常量e
+                Math.LN2: 2的自然对数
+                Math.LOG2E: 2为底的e的对数
+
+            Math.ceil(x):
+                上舍入
+            Math.floor(x):
+                下舍入
+            Math.round(x):
+                四舍五入
+            Math.random():
+                0-1之间的随机数
+            Math.exp(x):
+                e的指数
+            Math.pow(x,y):
+                x的y次幂
+            Math.log(x):
+                数的自然对数
+        -->
+
+        <h3>随机产生[m,n]区间内10个整数</h3>
+        <form name="Form1">
+            下限：<input type="text" name="minN" id="minN" size="20" value="10" >
+            上限: <input type="text" name="maxN" id="maxN" size="20" value="90">
+            <br><br>
+            产生数组：<input type="text" name="" id="array_num" size="40" readonly >
+            <br><br>
+            <input type="button" value="产生10个随机数" onclick="createInt();" >
+            <input type="reset" />
+        </form>
+    </body>
+</html>
