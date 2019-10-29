@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>事件监听</title>
+    </head>
+    <body>
+        <!--将测试的div元素-->
+        <div id="test">
+            <input id="testbn" type="button" value="单击我" >
+        </div>
+        <hr />
+        <div id="results"></div>
+        <script type="text/javascript">
+            //事件处理函数
+            var gotClick1 = function(event) {
+                // 该事件处理函数简单输出事件的当前对象
+                document.getElementById("results").innerHTML += "事件捕获阶段: " + event.currentTarget + "<br />";
+            }
+            //事件处理函数
+            function gotClick2(event) {
+                // 该事件处理函数简单输出事件的当前对象
+                document.getElementById("results").innerHTML +=
+                    "事件冒泡阶段：" + event.currentTarget + "<br />";
+            }
+            // textbn 绑定事件处理函数（捕获）
+            document.getElementById("testbn").addEventListener("click", gotClick1, true);
+            // test 对象绑定事件处理函数（捕获）
+            document.getElementById("text").addEventListener("click", gotClick1, true);
+            // testbn 绑定事件处理函数（冒泡）
+            document.getElementById("testbn").addEventListener("click", gotClick2, false);
+            // test 绑定事件处理函数（冒泡）
+            document.getElementById("test").addEventListener("click", gotClick2, false);
+        </script>
+
+    </body>
+</html>

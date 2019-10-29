@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>localStorage对象的应用</title>
+        <style>
+            div {
+                text-align: center;
+                padding: 20px;
+                border: 10px ridge #005a9c;
+                width: 350px;
+                height: 250px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+            localStorage:  持久化存储，数据长期可用
+                对象存储的数据没有时间限制
+
+                if (typeof(Storage) != "undefined") {
+                    // web 支持检查 localStorage sessionStorage Object
+                }
+                else {
+
+                }
+
+                localStorage.setItem(key, value);   // 保存数据
+                localStorage.getItem(key);          // 读取数据
+                localStorage.removeItem(key);       // 删除单个数据
+                localStorage.clear();               // 删除所有数据
+                localStorage.key(index);            // 得到某个索引的key
+        -->
+        <div>
+            <h3>最可爱的人评选</h3>
+            <img src="../img/tree.jpg" width="100px" height="100px" border="0" alt="0"><br>
+            <p id="result"></p>
+            <p>刷新页面票数会增长。</p>
+            <p>请关闭浏览器后重试仍会增扎那个</p>
+
+        </div>
+        <script>
+            var tickets = 0;
+            localStorage.setItem(tickets, 0);
+            if (localStorage.tickets) {
+                localStorage.tickets = parseInt(localStorage.tickets) + 1;
+            }
+            else {
+                localStorage.tickets = 1;
+            }
+            document.getElementById("result").innerHTML = "已投: " + localStorage.tickets + "票";
+
+        </script>
+    </body>
+</html>

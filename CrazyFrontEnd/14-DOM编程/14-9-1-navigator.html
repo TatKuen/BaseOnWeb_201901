@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>navigator和地理定位</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            alert(window.navigator);
+            var browser = "当前的浏览器信息是:\n";
+            // 遍历浏览器全部属性
+            for (var propname in window.navigator) {
+                // 将所有属性名、属性值连缀一起
+                browser += propname + ":" + window.navigator[propname] + "\n";
+            }
+            alert(browser);
+        </script>
+    </body>
+</html>

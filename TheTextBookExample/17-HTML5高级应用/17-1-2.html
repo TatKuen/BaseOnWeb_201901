@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>localStorage对象的API综合应用</title>
+        <script>
+            //载入所有存储在localStorage的通讯录信息
+            loadAllInfo();
+            //保存一条通讯记录数据，同时显示在div中
+            function $(id) {
+                return document.getElementById(id);e
+            }
+            function saveInfo() {
+                /*
+                    取姓名
+                    取电话
+                    不为空处理
+                */
+                var name1 = $("username").value;
+                var phone1 = $("userphone").value;
+                if (name1 != "" && phone1 != "") {
+                    localStorage.setItem(name1, phone1);
+                    loadAllInfo();
+                    alert("添加成功");
+                }
+                else {
+                    alert("请输入姓名和电话！");
+                    $("username").focus();      //获得焦点
+                }
+            }
+            function findForName() {
+                var searchName = $("search_name").value;
+                var searchPhone = localStorage.getItem(searchName);     // 取电话
+                $("userPhone1").value = searchPhone;                    // 填充电话
+            }
+            function loadAllInfo() {
+                // localStorage.clear()
+                // 取出所有通讯录信息 from localStorage
+                var result = "";
+                if (localStorage.length > 0) {
+                    result += "姓名     电话</br><hr>";
+                    for (var i = 0; i < localStorage.length; i++) {
+                        var name = localStorage.key(i);
+                        var phone = localStorage.key(i);
+                        result += name + " --- " + phone + "</br>";
+                    }
+                    $("displayallinfo").innerHTML = result;
+                }
+                else {
+                    $("displayallinfo").innerHTML = "数据为空 ... ";
+                }
+            }
+            function deleteName() {
+                localStorage.removeItem($("search_name").value);    // 取电话
+                $("search_name").value = "";
+                loadAllInfo();
+            }
+        </script>
+        <style>
+            fieldset {
+                float: left;
+                width: 300px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>通讯录添加</legend>
+            <label for="name">姓名(key):</label>
+            <input type="text" id="username" name="username" required />
+            <br />
+            <label for="telephone">电话(value):</label>
+            <input type="text" id="userphone" name="userphone" required />
+            <br />
+            <br><input type="button" onclick="saveInfo()" value="通讯录添加" />
+            <input type="reset">
+            <div id="displayallinfo" name="displayallinfo"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>通讯录查询与删除</legend>
+            <label for="searchPhone">输入姓名：</label>
+            <input type="text" id="search_name" name="search_name" required />
+            <br>
+            <label>电话：</label>
+            <input type="text" name="" id="userPhone1" readonly />
+            <br>
+            <input type="button" onclick="findForName();" value="查找通讯录" />
+            <input type="button" onclick="deleteName();" value="删除通讯录" />
+        </fieldset>
+    </body>
+</html>
